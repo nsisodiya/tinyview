@@ -2,9 +2,10 @@
  * Created by narendrasisodiya on 07/12/15.
  */
 
-class ResetComponent extends TinyView {
+class ResetComponent extends window.tinyview {
 	constructor(ele, options) {
 		super(...arguments);
+		this.render();
 	}
 
 	get domEvents() {
@@ -17,9 +18,11 @@ class ResetComponent extends TinyView {
 		this.publishGlobalEvent("RESET_COUNTER");
 	}
 
-	get template() {
-		return '<div><h1>Reset Component</h1>\
+	render() {
+		this.$.innerHTML = '<div><h1>Reset Component</h1>\
 				<button id="reset">Reset</button>\
       </div>';
 	}
 }
+
+export default ResetComponent;

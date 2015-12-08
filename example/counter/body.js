@@ -1,14 +1,19 @@
 /**
  * Created by narendrasisodiya on 07/12/15.
  */
-class BodyComponent extends TinyView {
+
+import CounterComponent from './counter';
+import ResetComponent from './reset';
+
+class BodyComponent extends window.tinyview {
 	constructor(ele, options) {
 		super(...arguments);
+		this.render();
 		this.loadSubComponents();
 	}
 
-	get template() {
-		return '<div><h1>Counter Example</h1>\
+	render() {
+		this.$.innerHTML = '<div><h1>Counter Example</h1>\
 				<div id="c1"></div>\
 				<div id="c2"></div>\
       </div>';
@@ -19,3 +24,5 @@ class BodyComponent extends TinyView {
 		this.startSubComponent(ResetComponent, this.$.querySelector('#c2'), {});
 	}
 }
+
+export default BodyComponent;

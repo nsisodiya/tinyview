@@ -1,10 +1,14 @@
 /**
  * Created by narendrasisodiya on 07/12/15.
  */
-class CounterComponent extends TinyView {
+
+import addBorder from './addBorder';
+
+class CounterComponent extends window.tinyview {
 	constructor(ele, options) {
 		super(...arguments);
 		this.count = 0;
+		this.render();
 		this.counterEle = this.$.querySelector("#val");
 		this.startInterval();
 	}
@@ -26,8 +30,8 @@ class CounterComponent extends TinyView {
 		}
 	}
 
-	get template() {
-		return '<div>Counter = <span id="val">0</span>\
+	render() {
+		this.$.innerHTML = '<div>Counter = <span id="val">0</span>\
 		<button id="stop">Stop</button>\
 		<button id="start">Start</button>\
       </div>';
@@ -56,3 +60,4 @@ class CounterComponent extends TinyView {
 		window.clearInterval(this.intervalSubId);
 	}
 }
+export default CounterComponent;

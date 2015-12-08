@@ -2,6 +2,8 @@
  * Created by narendrasisodiya on 07/12/15.
  */
 
+import TinyView from '../tinyview.js';
+
 TinyView.registerPlugin("tinyview-plugin-subComponentManager", function () {
 	TinyView.registerHooks({
 		afterStart: function () {

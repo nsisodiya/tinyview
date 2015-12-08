@@ -1,4 +1,6 @@
 //=============  Plugins  - DOM Events  ==========//
+import TinyView from '../tinyview.js';
+
 TinyView.registerPlugin("tinyview-plugin-domEvents", function () {
 	//  addLiveEventListener can be exposed as npm package !
 	var addLiveEventListener = (function () {
